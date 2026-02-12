@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Perunding Profesional</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts - Professional Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e3a5f;
+            --secondary-color: #2c5282;
+            --accent-color: #d69e2e;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .card-title {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .profile-header {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .profile-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #fff;
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-image-container:hover .profile-image {
+            transform: scale(1.05);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .biodata-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .services-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f0f4f8 100%);
+            border-top: 5px solid var(--primary-color);
+        }
+        
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-item:hover .service-icon {
+            background: var(--accent-color);
+            transform: rotate(360deg);
+        }
+        
+        .btn-cta {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(30, 58, 95, 0.3);
+        }
+        
+        .btn-cta::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-cta:hover::after {
+            left: 100%;
+        }
+        
+        .info-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+            transition: all 0.2s ease;
+        }
+        
+        .info-item:hover {
+            background: rgba(214, 158, 46, 0.05);
+            padding-left: 10px;
+            border-radius: 5px;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .badge-expert {
+            background: var(--accent-color);
+            color: white;
+            font-size: 0.8rem;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        
+        /* Responsive adjustments for image */
+        @media (min-width: 992px) {
+            .profile-image-container {
+                height: 100%;
+                min-height: 500px;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .profile-image-container {
+                height: 400px;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .profile-image-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="container py-5">
+        <div class="row mb-4">
+            <div class="col-12 text-center profile-header">
+                <h1 class="display-4 fw-bold mb-2">Profil Perunding Profesional</h1>
+                <p class="lead opacity-75">"Perunding ialah individu yang dibayar untuk berkongsi ilmu kepakaran dan idea bagi membantu 
+                orang lain menyelesaikan masalah atau mencapai matlamat mereka."</p>
+            </div>
+        </div>
+
+        <!-- Main Grid Layout -->
+        <div class="row g-4">
+            
+            <!-- Column 1: Visual (2 columns on desktop, 12 on mobile) -->
+            <div class="col-12 col-lg-2">
+                <div class="profile-image-container">
+                    <img src="awie.jpeg" 
+                         alt="Gambar Profil Perunding" 
+                         class="profile-image"
+                         onerror="this.src='https://via.placeholder.com/400x600/1e3a5f/ffffff?text=Profil+Perunding'; this.onerror=null;">
+                </div>
+            </div>
+
+            <!-- Column 2: Biodata (4 columns on desktop, 12 on mobile) -->
+            <div class="col-12 col-lg-4">
+                <div class="card h-100 shadow biodata-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 50px; height: 50px;">
+                                <i class="bi bi-person-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="card-title mb-0 text-primary">Maklumat Peribadi</h4>
+                                <small class="text-muted">Biodata Perunding</small>
+                            </div>
+                        </div>
+
+                        <div class="info-item d-flex align-items-center">
+                            <i class="bi bi-person-badge text-primary me-3 fs-5"></i>
+                            <div>
+                                <small class="text-muted d-block">Nama Penuh</small>
+                                <strong class="text-dark">muhammad sakhawi bin mohd nadri</strong>
+                            </div>
+                        </div>
+
+                        <div class="info-item d-flex align-items-center">
+                            <i class="bi bi-hash text-primary me-3 fs-5"></i>
+                            <div>
+                                <small class="text-muted d-block">No. Matrik</small>
+                                <strong class="text-dark">18DDT23F1092</strong>
+                            </div>
+                        </div>
+
+                        <div class="info-item d-flex align-items-center">
+                            <i class="bi bi-people-fill text-primary me-3 fs-5"></i>
+                            <div>
+                                <small class="text-muted d-block">Kelas</small>
+                                <strong class="text-dark">DDT6A</strong>
+                            </div>
+                        </div>
+
+                        <div class="info-item d-flex align-items-center">
+                            <i class="bi bi-telephone-fill text-primary me-3 fs-5"></i>
+                            <div>
+                                <small class="text-muted d-block">No. Telefon</small>
+                                <strong class="text-dark">0109334496</strong>
+                            </div>
+                        </div>
+
+                        <div class="info-item d-flex align-items-start">
+                            <i class="bi bi-building text-primary me-3 fs-5 mt-1"></i>
+                            <div>
+                                <small class="text-muted d-block">Alamat Pejabat</small>
+                                <strong class="text-dark">
+                                    Aras 5, Bangunan Inovasi,<br>
+                                    Universiti Teknologi Malaysia,<br>
+                                    81310 Skudai, Johor
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-top">
+                            <span class="badge-expert">
+                                <i class="bi bi-check-circle-fill me-1"></i> Perunding Bertauliah
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Services (6 columns on desktop, 12 on mobile) -->
+            <div class="col-12 col-lg-6">
+                <div class="card h-100 shadow services-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 50px; height: 50px;">
+                                <i class="bi bi-briefcase-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="card-title mb-0 text-primary">Kepakaran & Servis</h4>
+                                <small class="text-muted">Penyelesaian Profesional</small>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5 class="text-secondary mb-3">Kepakaran Utama</h5>
+                            <p class="text-muted">
+                                Saya adalah perunding pakar dalam <strong>Pengurusan Projek Digital</strong> dan 
+                                <strong>Transformasi Teknologi</strong> dengan pengalaman lebih 5 tahun membantu 
+                                syarikat SME dan korporat mengoptimumkan operasi perniagaan melalui 
+                                penyelesaian teknologi moden.
+                            </p>
+                        </div>
+
+                        <h5 class="text-secondary mb-3">Servis Yang Ditawarkan</h5>
+                        
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6 service-item">
+                                <div class="d-flex align-items-start p-3 bg-white rounded shadow-sm h-100">
+                                    <div class="service-icon flex-shrink-0 me-3">
+                                        <i class="bi bi-kanban"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1 fw-bold">Pengurusan Projek</h6>
+                                        <small class="text-muted">Perancangan & pelaksanaan projek IT</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 service-item">
+                                <div class="d-flex align-items-start p-3 bg-white rounded shadow-sm h-100">
+                                    <div class="service-icon flex-shrink-0 me-3">
+                                        <i class="bi bi-graph-up-arrow"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1 fw-bold">Analisis Data</h6>
+                                        <small class="text-muted">Business intelligence & reporting</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 service-item">
+                                <div class="d-flex align-items-start p-3 bg-white rounded shadow-sm h-100">
+                                    <div class="service-icon flex-shrink-0 me-3">
+                                        <i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1 fw-bold">Keselamatan Siber</h6>
+                                        <small class="text-muted">Audit & penilaian risiko</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 service-item">
+                                <div class="d-flex align-items-start p-3 bg-white rounded shadow-sm h-100">
+                                    <div class="service-icon flex-shrink-0 me-3">
+                                        <i class="bi bi-cloud-arrow-up"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1 fw-bold">Cloud Solutions</h6>
+                                        <small class="text-muted">Migrasi & pengurusan infrastruktur</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-light p-3 rounded mb-4 border-start border-4 border-warning">
+                            <small class="text-muted d-block mb-1">Pengalaman</small>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">50+ Projek Berjaya</span>
+                                <span class="fw-bold text-primary">98% Kepuasan Klien</span>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-primary btn-cta btn-lg rounded-pill" onclick="hubungiSekarang()">
+                                <i class="bi bi-chat-dots-fill me-2"></i>
+                                Hubungi Sekarang
+                            </button>
+                            <p class="mt-2 small text-muted">
+                                <i class="bi bi-clock me-1"></i> 
+                                Waktu operasi: Isnin - Jumaat, 9:00 AM - 6:00 PM
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="row mt-5">
+            <div class="col-12 text-center text-white opacity-75">
+                <p class="mb-0">&copy; 2024 Profil Perunding Profesional. Dibangunkan dengan Bootstrap 5.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function hubungiSekarang() {
+            // Simulasi interaksi butang CTA
+            const btn = document.querySelector('.btn-cta');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i> Permintaan Dihantar!';
+            btn.classList.remove('btn-primary');
+            btn.classList.add('btn-success');
+            
+            setTimeout(() => {
+                alert('Terima kasih! Permintaan anda telah direkodkan. Kami akan menghubungi anda segera.');
+                btn.innerHTML = originalText;
+                btn.classList.remove('btn-success');
+                btn.classList.add('btn-primary');
+            }, 500);
+        }
+
+        // Animasi scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
